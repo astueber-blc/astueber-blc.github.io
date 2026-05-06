@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #2a2a2a;
+      --text: #f0ede8;
+      --muted: #888;
+      --accent: #e8c87a;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    /* Subtle grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      width: 100%;
+      text-align: center;
+      animation: fadeUp .8s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(232,200,122,.3);
+      border-radius: 999px;
+      padding: .35rem 1rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    p.sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--accent);
+      color: #0d0d0d;
+      font-weight: 500;
+      font-size: .95rem;
+      padding: .85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity .2s, transform .2s;
+    }
+
+    .cta:hover {
+      opacity: .88;
+      transform: translateY(-2px);
+    }
+
+    .cta svg {
+      width: 16px; height: 16px;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 4rem;
+      font-size: .78rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="badge">Test Environment</div>
+    <h1>Let's <span>talk.</span></h1>
+    <p class="sub">
+      This page is running a Pipedrive chatbot integration test.
+      Use the chat widget in the corner to get started.
+    </p>
+    <a class="cta" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+      Start a conversation
+    </a>
+  </div>
+
+  <footer>Powered by Pipedrive LeadBooster</footer>
+
+  <!-- ================================================
+       PASTE YOUR PIPEDRIVE CHATBOT SCRIPT HERE
+       Replace everything between these comment tags
+       with your actual Pipedrive LeadBooster snippet
+  ================================================= -->
+  <script>
+    window.pipedriveLeadboosterConfig = {
+      base: 'leadbooster-chat.pipedrive.com',
+      companyId: 10306856,
+      playbookUuid: '1adfc43e-b9fc-48e2-b3fe-c81631298151',
+      version: 2
+    };
+    (function () {
+      var w = window;
+      if (w.LeadBooster) {
+        console.warn('LeadBooster already exists');
+      } else {
+        w.LeadBooster = {
+          q: [],
+          on: function (n, h) { this.q.push({ t: 'o', n: n, h: h }); },
+          trigger: function (n) { this.q.push({ t: 't', n: n }); },
+        };
+      }
+    })();
+  </script>
+  <script src="https://leadbooster-chat.pipedrive.com/assets/loader.js" async></script>
+  <!-- ================================================ -->
+
+</body>
+</html>
