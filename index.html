@@ -3,71 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Astueber</title>
+  <title>Pipeline Fever</title>
 
   <style>
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
     }
 
     body {
+      margin: 0;
+      padding: 0;
       background: #000;
       color: #f5d76e;
+      font-family: Arial, sans-serif;
       min-height: 100vh;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       padding: 40px 20px;
     }
 
     .container {
       width: 100%;
-      max-width: 800px;
-      text-align: center;
+      max-width: 900px;
     }
 
     .card {
-      background: #111;
-      border: 1px solid #f5d76e;
-      border-radius: 18px;
-      padding: 50px 40px;
-      box-shadow: 0 0 35px rgba(245, 215, 110, 0.12);
+      background: #0d0d0d;
+      border: 1px solid rgba(245, 215, 110, 0.25);
+      border-radius: 24px;
+      padding: 60px 50px;
+      box-shadow: 0 0 40px rgba(245, 215, 110, 0.08);
+
+      text-align: center;
     }
 
     h1 {
-      font-size: 3rem;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
+      margin: 0;
+      font-size: 3.5rem;
+      letter-spacing: 4px;
+      color: #f5d76e;
     }
 
-    p {
-      color: #d4c27a;
-      margin-bottom: 40px;
-      line-height: 1.6;
+    .subtitle {
+      margin-top: 18px;
+      margin-bottom: 50px;
+
+      color: #c7b26a;
       font-size: 1.1rem;
+      line-height: 1.7;
     }
 
-    .form-wrapper {
+    /* IMPORTANT */
+    /* Do NOT style inputs, buttons, forms globally */
+    /* This prevents overriding Pipedrive styles */
+
+    .form-container {
       margin-top: 20px;
       background: transparent;
+
+      display: flex;
+      justify-content: center;
     }
 
     .footer {
-      margin-top: 35px;
+      margin-top: 45px;
+      color: #666;
       font-size: 0.9rem;
-      color: #777;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .card {
-        padding: 30px 20px;
+        padding: 40px 22px;
       }
 
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
       }
     }
   </style>
@@ -75,26 +92,33 @@
 <body>
 
   <div class="container">
+
     <div class="card">
 
       <h1>PIPELINE FEVER</h1>
 
-      <p>
-        Simple. Elegant. Effective.<br>
+      <div class="subtitle">
+        Automations. Pipelines. Growth.<br>
         Contact us instantly through the form below or chat with us directly.
-      </p>
+      </div>
 
       <!-- Pipedrive Web Form -->
-      <div class="pipedriveWebForms" 
-        data-pd-webforms="https://webforms.pipedrive.com/f/6W6L0Q5Fyz34LONdMAP6fbNyvfUlbg5poDe4FWZzC6wBNaaBxLrVLWBZGqpOoHTD3B"><script src="https://webforms.pipedrive.com/f/loader"></script>
-      </div>
+      <div class="form-container">
+
+        <div
+          class="pipedriveWebForms"
+          data-pd-webforms="https://webforms.pipedrive.com/f/6W6L0Q5Fyz34LONdMAP6fbNyvfUlbg5poDe4FWZzC6wBNaaBxLrVLWBZGqpOoHTD3B">
+          <script src="https://webforms.pipedrive.com/f/loader"></script>
+        </div>
+
       </div>
 
       <div class="footer">
-        © 2026 Astueber
+        © 2026 Pipeline Fever
       </div>
 
     </div>
+
   </div>
 
   <!-- Pipedrive Chatbot -->
@@ -108,6 +132,7 @@
 
     (function () {
       var w = window;
+
       if (w.LeadBooster) {
         console.warn('LeadBooster already exists');
       } else {
