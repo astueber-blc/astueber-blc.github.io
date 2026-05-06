@@ -12,22 +12,20 @@
 
     body {
       margin: 0;
-      padding: 0;
       background: #000;
-      color: #f5d76e;
       font-family: Arial, sans-serif;
       min-height: 100vh;
 
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
 
       padding: 40px 20px;
     }
 
     .container {
       width: 100%;
-      max-width: 900px;
+      max-width: 950px;
     }
 
     .card {
@@ -35,56 +33,61 @@
       border: 1px solid rgba(245, 215, 110, 0.25);
       border-radius: 24px;
       padding: 60px 50px;
-      box-shadow: 0 0 40px rgba(245, 215, 110, 0.08);
-
       text-align: center;
+
+      box-shadow: 0 0 40px rgba(245, 215, 110, 0.08);
     }
 
     h1 {
       margin: 0;
-      font-size: 3.5rem;
-      letter-spacing: 4px;
       color: #f5d76e;
+      font-size: 4rem;
+      letter-spacing: 4px;
     }
 
     .subtitle {
-      margin-top: 18px;
+      margin-top: 20px;
       margin-bottom: 50px;
 
-      color: #c7b26a;
-      font-size: 1.1rem;
+      color: #d6bf6a;
+      font-size: 1.2rem;
       line-height: 1.7;
     }
 
     /* IMPORTANT */
-    /* Do NOT style inputs, buttons, forms globally */
-    /* This prevents overriding Pipedrive styles */
+    /* White isolated container for Pipedrive */
+    .form-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
 
-    .form-container {
-      margin-top: 20px;
-      background: transparent;
+      max-width: 720px;
+      margin: 0 auto;
 
-      display: flex;
-      justify-content: center;
+      overflow: hidden;
     }
 
     .footer {
-      margin-top: 45px;
-      color: #666;
+      margin-top: 40px;
+      color: #777;
       font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
       .card {
-        padding: 40px 22px;
+        padding: 35px 20px;
       }
 
       h1 {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
       }
 
       .subtitle {
         font-size: 1rem;
+      }
+
+      .form-box {
+        padding: 15px;
       }
     }
   </style>
@@ -98,12 +101,12 @@
       <h1>PIPELINE FEVER</h1>
 
       <div class="subtitle">
-        Automations. Pipelines. Growth.<br>
+        Simple. Elegant. Effective.<br>
         Contact us instantly through the form below or chat with us directly.
       </div>
 
-      <!-- Pipedrive Web Form -->
-      <div class="form-container">
+      <!-- FORM -->
+      <div class="form-box">
 
         <div
           class="pipedriveWebForms"
@@ -121,7 +124,7 @@
 
   </div>
 
-  <!-- Pipedrive Chatbot -->
+  <!-- CHATBOT -->
   <script>
     window.pipedriveLeadboosterConfig = {
       base: 'leadbooster-chat.pipedrive.com',
