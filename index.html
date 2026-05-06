@@ -6,91 +6,99 @@
   <title>Pipeline Fever</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    body {
-      margin: 0;
-      background: #000;
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
+  body {
+    margin: 0;
+    background: #000;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      padding: 40px 20px;
-    }
+    padding: 40px 20px;
+  }
 
-    .container {
-      width: 100%;
-      max-width: 950px;
-    }
+  .container {
+    width: 100%;
+    max-width: 950px;
+  }
 
+  .card {
+    background: #0d0d0d;
+    border: 1px solid rgba(245, 215, 110, 0.25);
+    border-radius: 24px;
+    padding: 60px 50px;
+    text-align: center;
+
+    box-shadow: 0 0 40px rgba(245, 215, 110, 0.08);
+  }
+
+  h1 {
+    margin: 0;
+    color: #f5d76e;
+    font-size: 4rem;
+    letter-spacing: 4px;
+  }
+
+  .subtitle {
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    color: #d6bf6a;
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+
+  /* FORM CONTAINER */
+  .form-box {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+
+    max-width: 720px;
+    margin: 0 auto;
+
+    text-align: left;
+  }
+
+  /* IMPORTANT FIX */
+  /* Reset inherited styles INSIDE pipedrive form */
+
+  .pipedriveWebForms,
+  .pipedriveWebForms * {
+    color: initial !important;
+    font-family: initial !important;
+  }
+
+  .footer {
+    margin-top: 40px;
+    color: #777;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
     .card {
-      background: #0d0d0d;
-      border: 1px solid rgba(245, 215, 110, 0.25);
-      border-radius: 24px;
-      padding: 60px 50px;
-      text-align: center;
-
-      box-shadow: 0 0 40px rgba(245, 215, 110, 0.08);
+      padding: 35px 20px;
     }
 
     h1 {
-      margin: 0;
-      color: #f5d76e;
-      font-size: 4rem;
-      letter-spacing: 4px;
+      font-size: 2.5rem;
     }
 
     .subtitle {
-      margin-top: 20px;
-      margin-bottom: 50px;
-
-      color: #d6bf6a;
-      font-size: 1.2rem;
-      line-height: 1.7;
+      font-size: 1rem;
     }
 
-    /* IMPORTANT */
-    /* White isolated container for Pipedrive */
     .form-box {
-      background: #fff;
-      border-radius: 20px;
-      padding: 30px;
-
-      max-width: 720px;
-      margin: 0 auto;
-
-      overflow: hidden;
+      padding: 14px;
     }
-
-    .footer {
-      margin-top: 40px;
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .card {
-        padding: 35px 20px;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      .subtitle {
-        font-size: 1rem;
-      }
-
-      .form-box {
-        padding: 15px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
